@@ -17,7 +17,7 @@
 }
 
 .btn-outline {
-    background-color: transparent;
+    background-color: #fff;
     color: #fff;
     padding: 8px 20px;
     border: 1px solid var(--primary);
@@ -34,9 +34,23 @@
     font-size: 20px;
 }
 
+.btn-outline:hover,
 .btn-medium:hover, 
 .btn--large:hover {
     background: #fff;
+    border: 2px solid #a2cfb3;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    border-radius: 50px;
     color: #242424;
     transition: all 0.3s ease-out;
+}
+
+.btn {
+    color: black;
+    background: #fff;
+}
+
+.btn:hover {
+    box-shadow: rgba(239, 241, 241, 0.973) 0px 0px 10px;
+    
 }

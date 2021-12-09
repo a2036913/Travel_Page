@@ -1,27 +1,27 @@
-//npm install react-router-dom
-
 import React from 'react';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
 import SignUp from './components/pages/SignUp';
 import Products from './components/pages/Products';
+import Login from './components/pages/Login';
+import UserProfile from './components/pages/UserProfile';
 
 function App() {
   return (
-    <>
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/services' component={Services} />
-        <Route path='/products' component={Products} />
-        <Route path='/sign-up' component={SignUp} />
-      </Switch>
-    </Router>
-    </>
+  <BrowserRouter>
+      <Navbar /> 
+       <Routes>
+        <Route path='/' exact element={<Home/>} />
+        <Route path='/services' element={<Services/>} />
+        <Route path='/products' element={<Products/>} />
+        <Route path='/sign-up' element={<SignUp/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/userprofile' element={<UserProfile/>} />
+       </Routes>
+ </BrowserRouter>
   );
 }
 
