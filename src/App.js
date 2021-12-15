@@ -13,7 +13,7 @@ import {LoginContext} from './context/LoginContext';
 
 
 function App(props) {
-  const [userLogin, setUserLogin] = useState(false);
+  const [userLogin, setUserLogin] = useState();
 
   return (
   <BrowserRouter>
@@ -22,20 +22,16 @@ function App(props) {
           userLoginContext: userLogin,
           setUserLoginContext: setUserLogin,
       }}>
-        {props.children}
       </LoginContext.Provider>
-      <Navbar /> 
+      <Navbar/>
        <Routes>
         <Route path='/' exact element={<Home/>} />
         <Route path='/products' element={<Products/>} />
-        <Route path='/signup' element={<SignUp/>} />
-        {/* <Route path='/login' element={!userLogin ? <Login/> : <Home/>} /> */}
-        <Route path='/login' element={<Login/>} />
-        {/* <Route path='/userprofile' element={!userLogin ? <Login/> : <UserProfile/>} /> */}
-        <Route path='/userprofile' element={<UserProfile/>} />
+        <Route path='/signup' element={!userLogin ? <SignUp/> : <Home/>} />
+        <Route path='/login' element={!userLogin ? <Login/> : <Home/>} />
+        <Route path='/userprofile' element={!userLogin ?<Login/> : <UserProfile/> } />
         <Route path='/productdetail' element={<ProductDetail/>} />
         {/* <Route path='/payment' element={!userLogin ? <Login/> : <Payment/>} /> */}
-        <Route path='/payment' element={<Payment/>} />
        </Routes>
  </BrowserRouter>
   );

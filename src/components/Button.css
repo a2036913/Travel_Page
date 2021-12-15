@@ -38,11 +38,11 @@
 .btn-medium:hover, 
 .btn--large:hover {
     background: #fff;
-    border: 2px solid #a2cfb3;
+    border: 2px solid #fff;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    border-radius: 50px;
+    border-radius: 20px;
     color: #242424;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s linear;
 }
 
 .btn {
@@ -52,5 +52,8 @@
 
 .btn:hover {
     box-shadow: rgba(239, 241, 241, 0.973) 0px 0px 10px;
-    
+}
+
+#logOut:hover {
+    box-shadow: 0px 0px 10px #fff;
 }

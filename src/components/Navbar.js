@@ -11,6 +11,9 @@ function Navbar(props) {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const userLogOut = (e)=> {e.preventDefault(); 
+    setUserLoginContext(true);
+    console.log(`click${userLoginContext} `);}
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -26,17 +29,12 @@ function Navbar(props) {
 
   window.addEventListener("resize", showButton);
 
-  // const hiddenIcon = () => {
-  //   if (click)
-  //   document.getElementById('userIcon').style.visibility = "hidden";
-  //   document.getElementById('logOut').style.visibility = "hidden";
-  // }
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <Link to="/" className="navbar-logo mb-3" onClick={closeMobileMenu}>
             TRAVEL <i class="fab fa-typo3 ml-3" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -64,7 +62,7 @@ function Navbar(props) {
                   className="nav-links-mobile"
                   onClick={closeMobileMenu}
                 >
-                  Login
+                  Log in
                 </Link>
               </li>
             }
@@ -75,17 +73,18 @@ function Navbar(props) {
                   src="/images/img-1.jpg"
                   alt="User Profile"
                   id="userIcon"
-                  className="self-center w-12 h-12 rounded-full ring-2 ring-white hover:ring-4  hover:ring-green-500"
+                  className="self-center w-14 h-14 rounded-full ring-2   ring-green-400 "
                 />
               </Link>
              : 
               button && <Button buttonStyle="btn--outline">Log in</Button>
             }
-            {userLoginContext} {
-              click ||
-              <li id="logOut" className="btn--outline w-20 py-2 ml-4 text-lg bg-white rounded-xl text-center cursor-pointer" >
+            {!userLoginContext ||
+              <button id="logOut"
+              onClick={userLogOut}
+              className="btn--outline w-20 h-12 py-2 mt-1 ml-4 text-lg bg-white rounded-xl text-center cursor-pointer" >
                 LOG OUT
-              </li>
+              </button>
             }
             
           </ul>

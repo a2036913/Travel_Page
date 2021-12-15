@@ -19,7 +19,7 @@ function Login() {
             <input
               type="text"
               placeholder="Username"
-              className="ml-2 px-4 w-4/5 h-8 focus:ring-blue-600 outline-none rounded-sm"
+              className="ml-2 px-4 w-4/5 h-8 outline-none rounded-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             />
           </div>
           <div class="mb-4 w-4/5 self-center">
@@ -27,7 +27,7 @@ function Login() {
             <input
               type="password"
               placeholder="Password"
-              className="ml-2 px-4 w-4/5 h-8 focus:ring-blue-600 outline-none rounded-sm"
+              className="ml-2 px-4 w-4/5 h-8 outline-none rounded-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent "
             />
           </div>
           <button className="text-2xl border-black border-b hover:bg-white hover:border-none rounded-sm">
